@@ -21,7 +21,6 @@ export default function CreateAPI() {
     e.preventDefault()
     console.log({ apiName, apiDescription, apiType })
   }
-
   return (
     <div>
       <h2 className="text-3xl font-bold mb-6">Create New API</h2>
