@@ -6,12 +6,11 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import {
   Select,
-  SelectTrigger,
-  SelectValue,
   SelectContent,
-  SelectItem
-} from "@/components/ui/Select"
-
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from "@/components/ui/select" // huruf kecil!
 
 export default function CreateAPI() {
   const [apiName, setApiName] = useState("")
@@ -20,7 +19,6 @@ export default function CreateAPI() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send this data to your backend
     console.log({ apiName, apiDescription, apiType })
   }
 
@@ -72,4 +70,3 @@ export default function CreateAPI() {
     </div>
   )
 }
-
