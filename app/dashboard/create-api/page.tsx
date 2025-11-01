@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue
+  select,
+  selectContent,
+  selectItem,
+  selectTrigger,
+  selectValue
 } from "@/components/ui/select" // huruf kecil!
 
 export default function CreateAPI() {
@@ -54,16 +54,16 @@ export default function CreateAPI() {
           <label htmlFor="apiType" className="block mb-2">
             API Type
           </label>
-          <Select value={apiType} onValueChange={setApiType}>
-            <SelectTrigger>
-              <SelectValue placeholder="Select API type" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="rest">REST</SelectItem>
-              <SelectItem value="graphql">GraphQL</SelectItem>
-              <SelectItem value="soap">SOAP</SelectItem>
-            </SelectContent>
-          </Select>
+          <select value={apiType} onValueChange={setApiType}>
+            <selectTrigger>
+              <selectValue placeholder="select API type" />
+            <selectTrigger>
+            <selectContent>
+              <selectItem value="rest">REST</selectItem>
+              <selectItem value="graphql">GraphQL</selectItem>
+              <selectItem value="soap">SOAP</selectItem>
+            </selectContent>
+          </select>
         </div>
         <Button type="submit">Create API</Button>
       </form>
