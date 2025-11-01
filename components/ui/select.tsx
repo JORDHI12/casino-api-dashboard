@@ -2,18 +2,18 @@
 
 import * as React from "react"
 import { Check, ChevronDown } from "lucide-react"
-import * as SelectPrimitive from "@radix-ui/react-select"
+import * as selectPrimitive from "@radix-ui/react-select"
 import { cn } from "@/lib/utils"
 
-const Select = SelectPrimitive.Root
-const SelectGroup = SelectPrimitive.Group
-const SelectValue = SelectPrimitive.Value
+const select = selectPrimitive.Root
+const selectGroup = selectPrimitive.Group
+const selectValue = selectPrimitive.Value
 
-const SelectTrigger = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
+const selectTrigger = React.forwardRef<
+  React.ElementRef<typeof selectPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof selectPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Trigger
+  <selectPrimitive.Trigger
     ref={ref}
     className={cn(
       "flex h-10 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
@@ -22,19 +22,19 @@ const SelectTrigger = React.forwardRef<
     {...props}
   >
     {children}
-    <SelectPrimitive.Icon asChild>
+    <selectPrimitive.Icon asChild>
       <ChevronDown className="h-4 w-4 opacity-50" />
-    </SelectPrimitive.Icon>
-  </SelectPrimitive.Trigger>
+    </selectPrimitive.Icon>
+  </selectPrimitive.Trigger>
 ))
-SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
+selectTrigger.displayName = selectPrimitive.Trigger.displayName
 
-const SelectContent = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
+const selectContent = React.forwardRef<
+  React.ElementRef<typeof selectPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof selectPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Portal>
-    <SelectPrimitive.Content
+  <selectPrimitive.Portal>
+    <selectPrimitive.Content
       ref={ref}
       className={cn(
         "relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md animate-in fade-in-80",
@@ -42,19 +42,19 @@ const SelectContent = React.forwardRef<
       )}
       {...props}
     >
-      <SelectPrimitive.Viewport className="p-1">
+      <selectPrimitive.Viewport className="p-1">
         {children}
-      </SelectPrimitive.Viewport>
-    </SelectPrimitive.Content>
-  </SelectPrimitive.Portal>
+      </selectPrimitive.Viewport>
+    </selectPrimitive.Content>
+  </selectPrimitive.Portal>
 ))
-SelectContent.displayName = SelectPrimitive.Content.displayName
+selectContent.displayName = selectPrimitive.Content.displayName
 
-const SelectItem = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
+const selectItem = React.forwardRef<
+  React.ElementRef<typeof selectPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof selectPrimitive.Item>
 >(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Item
+  <selectPrimitive.Item
     ref={ref}
     className={cn(
       "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
@@ -63,20 +63,20 @@ const SelectItem = React.forwardRef<
     {...props}
   >
     <span className="absolute right-2 flex h-3.5 w-3.5 items-center justify-center">
-      <SelectPrimitive.ItemIndicator>
+      <selectPrimitive.ItemIndicator>
         <Check className="h-4 w-4" />
-      </SelectPrimitive.ItemIndicator>
+      </selectPrimitive.ItemIndicator>
     </span>
-    <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
-  </SelectPrimitive.Item>
+    <selectPrimitive.ItemText>{children}</selectPrimitive.ItemText>
+  </selectPrimitive.Item>
 ))
-SelectItem.displayName = SelectPrimitive.Item.displayName
+selectItem.displayName = selectPrimitive.Item.displayName
 
 export {
-  Select,
-  SelectGroup,
-  SelectValue,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
+  select,
+  selectGroup,
+  selectValue,
+  selectTrigger,
+  selectContent,
+  selectItem,
 }
