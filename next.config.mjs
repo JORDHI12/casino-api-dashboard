@@ -16,11 +16,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
-  // App Router için statik export ayarları
-  experimental: {
-    // Statik export için gerekli ayarlar
-    staticPageGenerationTimeout: 60
-  }
+
 };
 
 export default nextConfig;
